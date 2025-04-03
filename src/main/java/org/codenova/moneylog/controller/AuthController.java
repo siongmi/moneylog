@@ -129,7 +129,6 @@ public class AuthController {
         return "redirect:/index";
     }
 
-
     @GetMapping("/kakao/callback")
     public String kakaoCallbackHandle(@RequestParam("code") String code,
                                       HttpSession session
