@@ -24,6 +24,10 @@ public interface ExpenseRepository {
                           @Param("startDate") LocalDate startDate,
                           @Param("endDate") LocalDate endDate);
 
+
+    List<Expense> getTop3ExpenseByUserId(@Param("userId") int userId,
+                                                @Param("startDate") LocalDate startDate,
+                                                @Param("endDate") LocalDate endDate);
 }
 
 

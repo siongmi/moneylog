@@ -37,11 +37,16 @@ public class IndexController {
             LocalDate startDate = today.minusDays(today.getDayOfWeek().getValue() - 1);
             LocalDate endDate = today.plusDays(7 - today.getDayOfWeek().getValue());
 
+
             model.addAttribute("user", user.get());
             model.addAttribute("startDate", startDate);
             model.addAttribute("endDate", endDate);
-            model.addAttribute("totalAmount", expenseRepository.getWeekExpenseSum(user.get().getId(),
-                    startDate ,endDate ));
+            model.addAttribute("totalAmount",
+                    expenseRepository.getWeekExpenseSum(user.get().getId(),
+                            startDate, endDate));
+            model.addAttribute("top3Expense",
+                    expenseRepository.getTop3ExpenseByUserId(user.get().getId(),
+                            startDate, endDate));
 
             return "home";
         } else {
