@@ -47,6 +47,9 @@ public class IndexController {
             model.addAttribute("top3Expense",
                     expenseRepository.getTop3ExpenseByUserId(user.get().getId(),
                             startDate, endDate));
+            model.addAttribute("categoryExpenses",
+                    expenseRepository.getTopCategoryExpenseByUserId(user.get().getId(),
+                            startDate, endDate));
 
             return "home";
         } else {

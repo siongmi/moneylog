@@ -43,24 +43,15 @@ public class LocalDateTime {
         // dayOfweek ==> 5 --> -4, +2
 
         LocalDate d = LocalDate.of(2025, 1, 24);
-        LocalDate firstDayOfWeek = d.minusDays( d.getDayOfWeek().getValue()-1);
-        LocalDate lastDayOfWeek = d.plusDays( 7 - d.getDayOfWeek().getValue());
+        LocalDate firstDayOfWeek = d.minusDays(d.getDayOfWeek().getValue() - 1);
+        LocalDate lastDayOfWeek = d.plusDays(7 - d.getDayOfWeek().getValue());
         System.out.println(firstDayOfWeek);
         System.out.println(lastDayOfWeek);
-
         // 한주의 시작을 일~토 요일로 보고 싶다면?
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    @Test
+    public void Test02(){
 
     }
 }
