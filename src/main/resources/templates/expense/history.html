@@ -68,7 +68,7 @@
         <td th:text="${one.expenseDate}" style="padding: 8px; border: 1px solid #ccc;"></td>
         <td th:text="${one.description}" style="padding: 8px; border: 1px solid #ccc;"></td>
         <td th:text="${one.amount}" style="padding: 8px; border: 1px solid #ccc;"></td>
-        <td th:text="${one.categoryId}" style="padding: 8px; border: 1px solid #ccc;"></td>
+        <td th:text="${one.name}" style="padding: 8px; border: 1px solid #ccc;"></td>
     </tr>
     </tbody>
 </table>
@@ -91,7 +91,7 @@
                 <td style="padding: 8px; border: 1px solid #ccc;  width: 20%;">
                     <select style="width: 100%" name="categoryId">
                         <option disabled selected>카테고리</option>
-                        <option th:each="one: ${sort}" th:text="${one.name}" th:value="${one.Id}"></option>
+                        <option th:each="one: ${sort}" th:text="${one.name}" th:value="${one.id}"></option>
                     </select>
                 </td>
             </tr>
