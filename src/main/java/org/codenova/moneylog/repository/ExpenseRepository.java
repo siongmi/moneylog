@@ -10,10 +10,22 @@ import java.util.List;
 
 @Mapper
 public interface ExpenseRepository {
-    public int save(Expense expense);
-    public List<Expense> findByUserId(@Param("userId") int userId);
-    public List<Expense> findByUserIdAndDuration(@Param("userId") int userId,
-                                                 @Param("startDate") LocalDate startDate,
-                                                 @Param("endDate") LocalDate endDate);
-    public List<ExpenseJoinCategory> expenseJoinCategory();
+    int save(Expense expense);
+
+    List<Expense> findByUserId(@Param("userId") int userId);
+
+    List<Expense> findByUserIdAndDuration(@Param("userId") int userId,
+                                          @Param("startDate") LocalDate startDate,
+                                          @Param("endDate") LocalDate endDate);
+
+    List<ExpenseJoinCategory> expenseJoinCategory();
+
+    int getWeekExpenseSum(@Param("userId") int userId,
+                          @Param("startDate") LocalDate startDate,
+                          @Param("endDate") LocalDate endDate);
+
 }
+
+
+
+

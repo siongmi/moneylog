@@ -26,6 +26,7 @@ public class ExpenseController {
 
         model.addAttribute("sort", categoryRepository.findAll());
         model.addAttribute("now", LocalDate.now());
+        model.addAttribute("expenses", expenseRepository.findByUserIdAndDuration(user.getId(), LocalDate.now().minusDays(10), LocalDate.now()));
 
         List<ExpenseJoinCategory> save = expenseRepository.expenseJoinCategory();
         model.addAttribute("save", save);
@@ -45,6 +46,7 @@ public class ExpenseController {
 
         return "redirect:/expense/history";
     }
+
 
 
 }
